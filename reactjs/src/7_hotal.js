@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// 🏨 HotelCard Component
 class HotelCard extends React.Component {
      renderStars = () => {
           const { rating } = this.props;
@@ -94,15 +93,7 @@ class HotelCard extends React.Component {
 class App extends React.Component {
      render() {
           const hotelData = [
-               {
-                    imageUrl: "https://images.unsplash.com/photo-1551776235-dde6d4829808?w=800",
-                    title: "ESSOTTO RECREATION HUB",
-                    subtitle: "Comfortable stay with premium amenities",
-                    location: "KIADB Export Area",
-                    price: 391,
-                    rating: 3.8,
-                    showBestPriceBadge: true
-               },
+           
                       {
                     imageUrl: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800",
                     title: "Hilltop Resort",
@@ -121,16 +112,25 @@ class App extends React.Component {
                     rating: 4.2,
                     showBestPriceBadge: true
                },
-    
-               {
-                    imageUrl: "https://images.unsplash.com/photo-1501117716987-c8e1ecb210cd?w=800",
-                    title: "City Business Stay",
-                    subtitle: "Business friendly rooms with workspace",
-                    location: "Bangalore",
-                    price: 310,
-                    rating: 3.9,
+                {
+                    imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop",
+                    title: "Blue Lagoon Resort",
+                    subtitle: "Luxury stay beside the lake",
+                    location: "Udaipur, Rajasthan",
+                    price: 850,
+                    rating: 4.7,
                     showBestPriceBadge: false
                },
+               {
+                    imageUrl: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=500&fit=crop",
+                    title: "Sunset Palace Hotel",
+                     subtitle: "Elegant rooms with city view",
+                    location: "Jaipur, Rajasthan",
+                   price: 620,
+                   rating: 4.4,
+                   showBestPriceBadge: false
+               },
+        
                {
                     imageUrl: "https://picsum.photos/600/400",
                     title: "Blue Lagoon Resort",
@@ -138,8 +138,8 @@ class App extends React.Component {
                     location: "Udaipur, Rajasthan",
                     price: 850,
                     rating: 4.7,
-                    showBestPriceBadge: true
-               }
+                    showBestPriceBadge: false
+               },
           ];
 
           return (
