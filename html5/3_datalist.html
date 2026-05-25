@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datalist tag</title>
+</head>
+<body>
+    <h2>source to destination</h2>
+    <table border="1" width="80%" cellpadding="10" cellspacing="5" >
+        <tr>
+            <td>
+               <label for="source">source</label> 
+               <input type="text" id="source" name="source" list="cities">
+            </td>
+            <td>
+                <label for="destination">destination</label>
+                <input type="text" id="destination" name="destination" list="cities">
+            </td>
+            <td>
+                <label for="">bustype</label>
+                <label for="ac">
+                    <input type="radio" name="bustype" id="ac" value="1">ac
+                </label>
+                <label for="nonac">
+                    <input type="radio" name="bustype" id="nonac" value="2">nonac
+                </label>
+                <label for="acsleeper">
+                    <input type="radio" name="bustype"  id="acsleeper" value="3">ACsleeper
+                </label>
+                <label for="sleeper">
+                    <input type="radio" name="bustype" id="sleeper" value="4">Sleeper
+                </label>
+            </td>
+            <td>
+                <label for="seat">select seat</label>
+                <select id="seat" >
+                    <option value="">select seat</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </td>
+            <td>
+                <button type="submit">submit</button>
+                <button type="reset">clear all</button>
+            </td>
+        </tr>
+    </table>
+    <datalist id="cities">
+        <option value="bhavnagar">
+        <option value="surat">
+        <option value="ahemdabad">
+        <option value="baroda">
+        <option value="amreli">
+        <option value="valsad">
+        <option value="surendranagar">
+        <option value="rajkot">
+        <option value="junagadh">
+        <option value="bhuj">
+        <option value="dwarka">
+        <option value="jamnagar">
+        <option value="panchmahal">
+        <option value="banglore">
+        <option value="kolkata">
+        <option value="chennai">
+        <option value="delhi">
+        <option value="mahuva">
+        <option value="div">
+        <option value="mumbai">
+        <option value="pune">
+        <option value="odisa">
+        <option value="hariyana">
+        <option value="punjab">
+        <option value="nepal">
+        <option value="nadiad">
+        <option value="daman">
+        <option value="ujjain">
+        <option value="goa">
+        <option value="morbi">
+    </datalist>
+</body>
+</html>
