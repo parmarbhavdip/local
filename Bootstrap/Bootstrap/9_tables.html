@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Content Delivery Network -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/20994dd270.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>working with tables</h1>
+            </div>
+            <div class="col-lg-6">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Gender</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aarav Sharma</td>
+                                <td>aarav.sharma@example.com</td>
+                                <td>9876543210</td>
+                                <td>Male</td>
+                                <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker fa-2x"></i>
+                                    <i class="fa-solid fa-trash fa-2x"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananya Verma</td>
+                                <td>ananya.verma@example.com</td>
+                                <td>9123456780</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rohan Mehta</td>
+                                <td>rohan.mehta@example.com</td>
+                                <td>9988776655</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Isha Kapoor</td>
+                                <td>isha.kapoor@example.com</td>
+                                <td>9012345678</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Devansh Nair</td>
+                                <td>devansh.nair@example.com</td>
+                                <td>9786543210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kavya Reddy</td>
+                                <td>kavya.reddy@example.com</td>
+                                <td>9321654987</td>
+                                <td>Female</td>
+                                 <td>
+                                    <button type="button" class="btn btn-warning w-100">
+                                         <i class="fa-solid fa-marker"></i>Edit 
+                                    </button> <br/>
+                                    <button type="button" class="btn btn-danger w-100">
+                                         <i class="fa-solid fa-trash"></i>Delete
+                                    </button>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Yash Patel</td>
+                                <td>yash.patel@example.com</td>
+                                <td>9867453210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Saanvi Das</td>
+                                <td>saanvi.das@example.com</td>
+                                <td>9932145786</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rahul Joshi</td>
+                                <td>rahul.joshi@example.com</td>
+                                <td>9871234560</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Priya Iyer</td>
+                                <td>priya.iyer@example.com</td>
+                                <td>9501234987</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-sm table-striped-columns">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Gender</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aarav Sharma</td>
+                                <td>aarav.sharma@example.com</td>
+                                <td>9876543210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananya Verma</td>
+                                <td>ananya.verma@example.com</td>
+                                <td>9123456780</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rohan Mehta</td>
+                                <td>rohan.mehta@example.com</td>
+                                <td>9988776655</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Isha Kapoor</td>
+                                <td>isha.kapoor@example.com</td>
+                                <td>9012345678</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Devansh Nair</td>
+                                <td>devansh.nair@example.com</td>
+                                <td>9786543210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kavya Reddy</td>
+                                <td>kavya.reddy@example.com</td>
+                                <td>9321654987</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Yash Patel</td>
+                                <td>yash.patel@example.com</td>
+                                <td>9867453210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Saanvi Das</td>
+                                <td>saanvi.das@example.com</td>
+                                <td>9932145786</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rahul Joshi</td>
+                                <td>rahul.joshi@example.com</td>
+                                <td>9871234560</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Priya Iyer</td>
+                                <td>priya.iyer@example.com</td>
+                                <td>9501234987</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="table-responsive">
+                    <table class="table table-borderless table-striped table-primary">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Gender</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aarav Sharma</td>
+                                <td>aarav.sharma@example.com</td>
+                                <td>9876543210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananya Verma</td>
+                                <td>ananya.verma@example.com</td>
+                                <td>9123456780</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rohan Mehta</td>
+                                <td>rohan.mehta@example.com</td>
+                                <td>9988776655</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Isha Kapoor</td>
+                                <td>isha.kapoor@example.com</td>
+                                <td>9012345678</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Devansh Nair</td>
+                                <td>devansh.nair@example.com</td>
+                                <td>9786543210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kavya Reddy</td>
+                                <td>kavya.reddy@example.com</td>
+                                <td>9321654987</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Yash Patel</td>
+                                <td>yash.patel@example.com</td>
+                                <td>9867453210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Saanvi Das</td>
+                                <td>saanvi.das@example.com</td>
+                                <td>9932145786</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rahul Joshi</td>
+                                <td>rahul.joshi@example.com</td>
+                                <td>9871234560</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Priya Iyer</td>
+                                <td>priya.iyer@example.com</td>
+                                <td>9501234987</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-bg-dark">Student Name</th>
+                                <th class="text-bg-dark">Email</th>
+                                <th class="text-bg-dark">Mobile</th>
+                                <th class="text-bg-dark">Gender</th>
+                                <th class="text-bg-dark">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aarav Sharma</td>
+                                <td>aarav.sharma@example.com</td>
+                                <td>9876543210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananya Verma</td>
+                                <td>ananya.verma@example.com</td>
+                                <td>9123456780</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rohan Mehta</td>
+                                <td>rohan.mehta@example.com</td>
+                                <td>9988776655</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Isha Kapoor</td>
+                                <td>isha.kapoor@example.com</td>
+                                <td>9012345678</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Devansh Nair</td>
+                                <td>devansh.nair@example.com</td>
+                                <td>9786543210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kavya Reddy</td>
+                                <td>kavya.reddy@example.com</td>
+                                <td>9321654987</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Yash Patel</td>
+                                <td>yash.patel@example.com</td>
+                                <td>9867453210</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Saanvi Das</td>
+                                <td>saanvi.das@example.com</td>
+                                <td>9932145786</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rahul Joshi</td>
+                                <td>rahul.joshi@example.com</td>
+                                <td>9871234560</td>
+                                <td>Male</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Priya Iyer</td>
+                                <td>priya.iyer@example.com</td>
+                                <td>9501234987</td>
+                                <td>Female</td>
+                                 <td class="d-flex justify-content-around">
+                                    <i class="fa-solid fa-marker"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

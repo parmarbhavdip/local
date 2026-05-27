@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <!-- Content Delivery Network -->
+    <script src="https://kit.fontawesome.com/20994dd270.js" crossorigin="anonymous"></script>
+    <!-- 
+        Matrimonials register form 
+        I am creating Profile, firstname, lastname, 
+        dob ,Religion,Community,Livning In .
+        Martial status, Email, Mobile, Photo
+        City, Pincode, Address,
+    -->
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card shadow mt-5">
+            <div class="card-header text-bg-danger">
+                <h1> Matrimonials register form </h1>
+            </div>
+            <div class="card-body">
+                <form action="" >
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                            <label for="" class="form-label">I am creating Profile</label>
+                            <select class="form-select">
+                                <option value="">Select</option>
+                                <option value="">Brother</option>
+                                <option value="">Sister</option>
+                                <option value="">Son</option>
+                                <option value="">Daughter</option>
+                                <option value="">Friend</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                            <label for="" class="form-label">First Name</label>
+                            <input type="text" class="form-control" required />
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                            <label for="" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label for="" class="form-label">Date of birth</label>
+                            <input type="date" class="form-control" />
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label for="religion" class="form-label">Select Religion:</label>
+                            <select id="religion" name="religion" class="form-select">
+                                <option value="">Select</option>
+                                <option value="hinduism">Hinduism</option>
+                                <option value="islam">Islam</option>
+                                <option value="christianity">Christianity</option>
+                                <option value="sikhism">Sikhism</option>
+                                <option value="buddhism">Buddhism</option>
+                                <option value="jainism">Jainism</option>
+                                <option value="others">Others</option>
+                            </select>
+
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label for="community" class="form-label">Select Community (Language):</label>
+                            <select id="community" name="community" class="form-select">
+                                <option value="gujarati">Gujarati</option>
+                                <option value="marathi">Marathi</option>
+                                <option value="tamil">Tamil</option>
+                                <option value="hindi">Hindi</option>
+                                <option value="bengali">Bengali</option>
+                                <option value="punjabi">Punjabi</option>
+                                <option value="telugu">Telugu</option>
+                                <option value="malayalam">Malayalam</option>
+                                <option value="kannada">Kannada</option>
+                                <option value="odia">Odia</option>
+                                <option value="assamese">Assamese</option>
+                                <option value="kashmiri">Kashmiri</option>
+                                <option value="nepali">Nepali</option>
+                                <option value="sindhi">Sindhi</option>
+                                <option value="other">Other</option>
+                            </select>
+
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label for="state" class="form-label">Select State:</label>
+                            <select id="state" name="state" class="form-select">
+                                <option value="andhra_pradesh">Andhra Pradesh</option>
+                                <option value="arunachal_pradesh">Arunachal Pradesh</option>
+                                <option value="assam">Assam</option>
+                                <option value="bihar">Bihar</option>
+                                <option value="chhattisgarh">Chhattisgarh</option>
+                                <option value="goa">Goa</option>
+                                <option value="gujarat">Gujarat</option>
+                                <option value="haryana">Haryana</option>
+                                <option value="himachal_pradesh">Himachal Pradesh</option>
+                                <option value="jammu_kashmir">Jammu & Kashmir</option>
+                                <option value="jharkhand">Jharkhand</option>
+                                <option value="karnataka">Karnataka</option>
+                                <option value="kerala">Kerala</option>
+                                <option value="madhya_pradesh">Madhya Pradesh</option>
+                                <option value="maharashtra">Maharashtra</option>
+                                <option value="manipur">Manipur</option>
+                                <option value="meghalaya">Meghalaya</option>
+                                <option value="mizoram">Mizoram</option>
+                                <option value="nagaland">Nagaland</option>
+                                <option value="odisha">Odisha</option>
+                                <option value="punjab">Punjab</option>
+                                <option value="rajasthan">Rajasthan</option>
+                                <option value="sikkim">Sikkim</option>
+                                <option value="tamil_nadu">Tamil Nadu</option>
+                                <option value="telangana">Telangana</option>
+                                <option value="tripura">Tripura</option>
+                                <option value="uttar_pradesh">Uttar Pradesh</option>
+                                <option value="uttarakhand">Uttarakhand</option>
+                                <option value="west_bengal">West Bengal</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <!-- Martial status, Email, Mobile, Photo -->
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label for="form-label">Select Martial status</label>
+                            <div class="form-check">
+                                <input type="radio" name="status" id="unmarried" value="1" class="form-check-input" />
+                                <label for="unmarried" class="form-check-label">
+                                    unmarried
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="status" id="divoreced" value="2" class="form-check-input" />
+                                <label for="divoreced" class="form-check-label">
+                                    divoreced
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label for="" class="form-label">Email</label>
+                            <input type="email" class="form-control" />
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label for="" class="form-label">Mobile</label>
+                            <input type="tel" class="form-control" />
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label for="" class="form-label">Select Photo</label>
+                            <input type="file" class="form-control" />
+                        </div>
+                    </div>
+                    <!-- City, Pincode, Address, -->
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                            <label for="" class="form-label">City</label>
+                            <input type="text" name="" id="" class="form-control" />
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                            <label for="" class="form-label">Pincode</label>
+                            <input type="text" name="" id="" class="form-control" />
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea name="address" id="address" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-end">
+                            <button class="btn btn-danger">Create Account</button>
+                            &nbsp;
+                            <button class="btn btn-dark">Clear all</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
