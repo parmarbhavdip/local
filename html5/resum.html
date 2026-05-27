@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavdipsinh Parmar - Resume</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --text-color: #333;
+            --bg-color: #fff;
+            --line-color: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg-color);
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 2.5em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--line-color);
+            padding-bottom: 5px;
+            font-size: 1.4em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .item {
+            margin-bottom: 15px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+
+        .item-date {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+
+        .skills-grid strong {
+            display: inline-block;
+            width: 100px;
+        }
+
+        @media (max-width: 600px) {
+            .item-header {
+                flex-direction: column;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+            .resume-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <header>
+            <h1>Bhavdipsinh Parmar</h1>
+            <div class="subtitle">Full Stack Web Developer</div>
+            <div class="contact-info">
+                <span>📞 +91 8849813696</span>
+                <span>✉️ <a href="mailto:bhavdipsinhparmar245@gmail.com">bhavdipsinhparmar245@gmail.com</a></span>
+                <span>🌐 <a href="https://github.com/parmarbhavdip" target="_blank">github.com/parmarbhavdip</a></span>
+                <span>📍 Sihor, Bhavnagar - 364240</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p>Highly motivated and adaptable Full Stack Web Developer proficient in the MERN stack and Python. Experienced in database design, API integration, and building scalable, user-friendly applications. A dedicated problem-solver with a strong foundation in both academic and independent projects, committed to continuous learning and delivering clean, efficient code.</p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Bootstrap, React.js</div>
+                <div><strong>Backend:</strong> Python, Node.js, Express.js</div>
+                <div><strong>Database:</strong> MySQL</div>
+                <div><strong>Tools:</strong> Git, GitHub, VS Code, Canva</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Bank Management System</span>
+                    <span class="item-subtitle">Python, MySQL</span>
+                </div>
+                <ul>
+                    <li>Developed a comprehensive bank management application featuring full CRUD functionality for seamless customer data and financial transaction management.</li>
+                    <li>Implemented advanced database normalization and designed complex SQL queries to ensure data integrity and efficient retrieval.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Weather Forecasting Application</span>
+                    <span class="item-subtitle">React.js, REST API</span>
+                </div>
+                <ul>
+                    <li>Built a dynamic weather application fetching real-time data via the OpenWeatherMap API.</li>
+                    <li>Engineered a responsive user interface with location-based filtering and dynamic content rendering for an optimal user experience.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Student Management System</span>
+                    <span class="item-subtitle">HTML, CSS, JavaScript, Bootstrap</span>
+                </div>
+                <ul>
+                    <li>Created a robust system for adding, viewing, and managing student records.</li>
+                    <li>Integrated client-side form validation to enhance data accuracy and prevent erroneous submissions.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education & Training</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Bachelor of Computer Applications (BCA)</span>
+                    <span class="item-date">2023 &ndash; 2026</span>
+                </div>
+                <div class="item-subtitle">MKBU University, Bhavnagar</div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Full Stack Web Development Training</span>
+                </div>
+                <div class="item-subtitle">The Easy Learn Academy, Bhavnagar</div>
+                <ul>
+                    <li>Built full-stack web applications and gained practical experience in frontend design and backend API integration.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications & Languages</h2>
+            <ul>
+                <li><strong>Certificate:</strong> MERN Stack Development Certificate &ndash; The Easy Learn Academy, Bhavnagar</li>
+                <li><strong>Languages:</strong> Gujarati (Native), English (Professional), Hindi (Conversational)</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
