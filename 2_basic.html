@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol {
+            background-color: aliceblue;
+            border: 3px solid black;
+            /* width property is used to set width, it uses 50% width of parent */
+
+            /* make border radius curvey */
+            border-radius: 40px;
+            /* used to set width */
+            width: 70%;
+            /*  used to set type of symbol */
+            list-style-position: inside;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            /* change font */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            font-size: 20px;
+            /* used to set height */
+            height: 100px;
+
+            /* when we give auto to margin property it puts tag in center of its parent */
+            margin: auto;
+
+            /* put its children into center (5 li tag) */
+            text-align: center;
+        }
+
+        li {
+            /* make block tag inline */
+            display: inline;
+            /* used to set gap between object and right side object */
+            margin-right: 50px;
+        }
+        span 
+        {
+            /* make inline tag, to block tag */
+            display: block;
+            background-color: aliceblue;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            padding:10px;
+            /* width:300px;  this will not work because width property do not work on inline tag */
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>third Item</li>
+        <li>fourth Item</li>
+        <li>fifth Item</li>
+    </ol>
+    <hr/>
+    <br/>
+    <span>India</span>
+    <span>Gujarat</span>
+    <span>Bhavnagar</span>
+</body>
+
+</html>
