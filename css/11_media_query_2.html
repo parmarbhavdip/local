@@ -1,0 +1,217 @@
+<!-- https://vaadin.com/documents/411367/0/css-grid-elements.jpg/f106b6b6-8270-4f94-98be-e870a8758c4f?t=1502746410246 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            letter-spacing: 1px;
+            box-sizing: border-box;
+        }
+
+        #site>div {
+            /* temporary */
+            border: 1px solid black;
+        }
+
+        #site {
+            display: grid;
+            height: 100vh;
+        }
+
+        #mobile_menu {
+            display: none;
+        }
+
+        /*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+        @media (min-width: 320px) and (max-width: 767px) {
+
+            /* code in this block will be applied only if device width>320 and <480 */
+            #site {
+                grid-template-columns: 100%;
+                grid-template-rows: 60px 50px auto auto 50px;
+                grid-template-areas:
+                    "site_header"
+                    "site_nav"
+                    "main"
+                    "sidebar"
+                    "site_footer";
+                overflow-y: auto;
+            }
+        }
+
+        /* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            /* code in this block will be applied only if device width>768 and <1024 */
+        }
+
+        /* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
+        @media (min-width: 1025px) and (max-width: 1280px) {
+
+            /* code in this block will be applied only if device width>1025 and <1280 */
+            #site {
+                grid-template-columns: 30% 70%;
+                grid-template-rows: 50px auto auto 50px;
+                grid-template-areas:
+                    "site_header site_header"
+                    "site_nav main"
+                    "site_nav sidebar"
+                    "site_footer site_footer";
+            }
+        }
+
+        /* ##Device = Desktops ##Screen = 1281px to higher resolution desktop */
+        @media (min-width: 1281px) {
+
+            /* code in this block will be applied only if device width>1281 */
+            #site {
+                grid-template-columns: 20% 60% 20%;
+                grid-template-rows: 100px auto 50px;
+                grid-template-areas:
+                    "site_header site_header site_header"
+                    "site_nav main sidebar"
+                    "site_footer site_footer site_footer";
+            }
+        }
+
+        #site_header {
+            grid-area: site_header;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #AF3E3E;
+            color: #EAEBD0;
+        }
+
+        @media (max-width: 1150px) {
+            #desktop-menu {
+                display: none !important;
+            }
+
+            #mobile_menu {
+                display: block !important;
+                margin-right: 10px;
+            }
+        }
+
+        #site_header>span {
+            display: flex;
+            align-items: center;
+        }
+
+        #site_header>ul {
+            display: flex;
+            list-style-type: none;
+            margin-right: 20px;
+            gap: 10px;
+        }
+
+        #site_header>ul>li>a:link,
+        #site_header>ul>li>a:visited {
+            display: inline-block;
+            width: 160px !important;
+            height: 40px !important;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #AF3E3E;
+            background-color: #EAEBD0;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            text-align: center;
+        }
+
+        #site_header>ul>li>a:hover {
+            font-size: large;
+            background-color: white;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        #site_nav {
+            grid-area: site_nav;
+        }
+
+        #main {
+            grid-area: main;
+        }
+
+        #sidebar {
+            grid-area: sidebar;
+        }
+
+        #site_footer {
+            grid-area: site_footer;
+        }
+
+        #mobile_menu_div {
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            background-color: antiquewhite;
+            width: 99.5%;
+        }
+        #mobile_menu_div>ul 
+        {
+            line-height: 150%;
+            padding-left:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="site">
+        <div id="site_header">
+            <span>
+                <img src="images/icon.png" alt="" />
+                <h2>THE EASYLEARN</h2>
+            </span>
+            <ul id="desktop-menu">
+                <li><a href="1_basic.html">Home</a></li>
+                <li><a href="2_basic.html">About us</a></li>
+                <li><a href="3_selectors.html">Products</a></li>
+                <li><a href="4_selectors.html">Services</a></li>
+                <li><a href="5_inline_css.html">Contact us</a></li>
+            </ul>
+            <img id="mobile_menu" src="images/menu.png" height="48px" onclick="menu_button_click();" />
+        </div>
+
+        <div id="site_nav">Navigation</div>
+        <div id="main">Main</div>
+        <div id="sidebar">Sidebar</div>
+        <div id="site_footer">Footer</div>
+    </div>
+    <div id="mobile_menu_div">
+        <ul>
+            <li><a href="1_basic.html">Home</a></li>
+            <li><a href="2_basic.html">About us</a></li>
+            <li><a href="3_selectors.html">Products</a></li>
+            <li><a href="4_selectors.html">Services</a></li>
+            <li><a href="5_inline_css.html">Contact us</a></li>
+        </ul>
+    </div>
+    <script>
+        var isMenuVisible = false;
+        function menu_button_click() {
+            if (isMenuVisible === true) {
+                //alert('Menu is visible, lets hide it');
+                isMenuVisible = false;
+                document.getElementById('mobile_menu_div').style = "display:block";
+            }
+            else {
+                //alert('Menu is hidden, lets show it');
+                isMenuVisible = true;
+                document.getElementById('mobile_menu_div').style = "display:none";
+            }
+        }
+    </script>
+</body>
+
+</html>
