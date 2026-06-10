@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bhavdipsinh Parmar | MERN Stack Portfolio</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+    body {
+      background: #f8fafc;
+      scroll-behavior: smooth;
+    }
+
+    /* main flex container */
+    .main-container {
+      display: flex;
+    }
+
+    /* ---------- SIDEBAR (premium dark gradient) ---------- */
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      background: linear-gradient(145deg, #0a0c10 0%, #030507 100%);
+      color: #ededee;
+      padding: 32px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-shadow: 4px 0 30px rgba(0, 0, 0, 0.25);
+      z-index: 100;
+      transition: all 0.3s ease;
+      overflow-y: auto;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .sidebar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+      background: #1e1f25;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background: #3b82f6;
+      border-radius: 10px;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-img-wrapper {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 18px;
+      background: linear-gradient(135deg, #3b82f6, #a855f7);
+      border-radius: 50%;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #0a0c10;
+    }
+
+    .profile h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(120deg, #fff, #cbd5e1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 6px;
+    }
+
+    .profile p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      font-weight: 500;
+      background: rgba(255,255,255,0.05);
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* menu styling */
+    .menu {
+      list-style: none;
+      margin-top: 40px;
+    }
+
+    .menu li {
+      margin: 14px 0;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #e2e8f0;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 500;
+      font-size: 1rem;
+      border-radius: 16px;
+      transition: all 0.25s ease;
+    }
+
+    .menu a i {
+      width: 24px;
+      font-size: 1.2rem;
+      color: #60a5fa;
+      transition: 0.2s;
+    }
+
+    .menu a:hover {
+      background: rgba(59, 130, 246, 0.2);
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .menu a:hover i {
+      color: #c084fc;
+    }
+
+    /* social links in sidebar */
+    .social-sidebar {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-sidebar a {
+      color: #94a3b8;
+      font-size: 1.3rem;
+      transition: 0.2s;
+    }
+
+    .social-sidebar a:hover {
+      color: #60a5fa;
+      transform: translateY(-3px);
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .main-content {
+      margin-left: 280px;
+      padding: 40px 60px;
+      width: 100%;
+      max-width: calc(100% - 280px);
+    }
+
+    section {
+      margin-bottom: 90px;
+      scroll-margin-top: 30px;
+    }
+
+    /* Hero area */
+    .hero {
+      background: linear-gradient(125deg, #ffffff, #f1f5f9);
+      padding: 48px 40px;
+      border-radius: 36px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .hero-badge {
+      background: #e0e7ff;
+      color: #2563eb;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 60px;
+      display: inline-block;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .hero .highlight {
+      color: #2563eb;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #334155;
+      max-width: 80%;
+      line-height: 1.5;
+    }
+
+    .cta-buttons {
+      margin-top: 32px;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #0f172a;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: scale(1.02);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #cbd5e1;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.2s;
+      text-decoration: none;
+      color: #1e293b;
+    }
+
+    .btn-outline:hover {
+      border-color: #2563eb;
+      background: #f8fafc;
+      color: #2563eb;
+    }
+
+    /* about section */
+    .about-grid {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      background: white;
+      padding: 36px;
+      border-radius: 32px;
+      box-shadow: 0 8px 25px -10px rgba(0, 0, 0, 0.03);
+      border: 1px solid #eef2ff;
+    }
+
+    .about-text {
+      flex: 2;
+    }
+
+    .about-text h2, .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-text h2:after, .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: #3b82f6;
+      border-radius: 4px;
+    }
+
+    .about-text p {
+      color: #334155;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    .info-list {
+      flex: 1;
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 24px;
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+
+    .info-list li i {
+      color: #3b82f6;
+      width: 26px;
+    }
+
+    /* skills modern cards */
+    .skills-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .skill-card {
+      background: white;
+      backdrop-filter: blur(4px);
+      padding: 12px 26px;
+      border-radius: 50px;
+      font-weight: 600;
+      color: #0f172a;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #e2e8f0;
+      transition: 0.2s;
+    }
+
+    .skill-card:hover {
+      border-color: #60a5fa;
+      transform: translateY(-3px);
+      background: #eff6ff;
+    }
+
+    /* projects grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .project-item {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.25s ease;
+      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eef2ff;
+    }
+
+    .project-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 35px -15px rgba(37, 99, 235, 0.2);
+    }
+
+    .project-img {
+      height: 160px;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+    }
+
+    .project-info {
+      padding: 24px;
+    }
+
+    .project-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    .project-tags span {
+      background: #f1f5f9;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    /* Internship / Training Section specific */
+    .internship-card {
+      background: white;
+      padding: 28px;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px -6px rgba(0,0,0,0.05);
+      border: 1px solid #eef2ff;
+      margin-top: 20px;
+    }
+    .internship-card h3 {
+      font-size: 1.4rem;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+    .internship-card .sub {
+      color: #3b82f6;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .internship-card ul {
+      margin-left: 20px;
+      margin-top: 10px;
+      color: #334155;
+    }
+    .internship-card li {
+      margin: 8px 0;
+    }
+
+    /* education & certification row */
+    .edu-cert-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 25px;
+    }
+    .edu-card, .cert-card {
+      background: white;
+      flex: 1;
+      padding: 28px;
+      border-radius: 28px;
+      border: 1px solid #eef2ff;
+      transition: 0.2s;
+    }
+    .edu-card h3, .cert-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .date {
+      color: #3b82f6;
+      font-weight: 500;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* contact form */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background: white;
+      border-radius: 32px;
+      padding: 36px;
+      box-shadow: 0 12px 30px -12px rgba(0,0,0,0.05);
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 25px 0;
+    }
+
+    .contact-detail i {
+      font-size: 1.5rem;
+      color: #3b82f6;
+    }
+
+    .contact-form {
+      flex: 1.5;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group input, .input-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 24px;
+      border: 1px solid #e2e8f0;
+      background: #fefefe;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    .input-group input:focus, .input-group textarea:focus {
+      outline: none;
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    button[type="submit"] {
+      background: #0f172a;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button[type="submit"]:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 28px;
+      background: white;
+      border-radius: 28px;
+      color: #475569;
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        transform: none;
+      }
+      .main-content {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 30px 24px;
+      }
+      .main-container {
+        flex-direction: column;
+      }
+      .hero p {
+        max-width: 100%;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .about-grid {
+        flex-direction: column;
+      }
+      .menu a {
+        justify-content: center;
+      }
+      .profile-img-wrapper {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero {
+        padding: 28px;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-container {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="main-container">
+  <!-- Sidebar with Bhavdipsinh's Identity -->
+  <aside class="sidebar">
+    <div class="profile">
+      <div class="profile-img-wrapper">
+        <!-- professional placeholder image (can be replaced) -->
+        <img src="./img/my.jpg.jpg" alt="Bhavdipsinh Parmar">
+      </div>
+      <h3>Bhavdipsinh Parmar</h3>
+      <p>Fresher MERN Stack Developer</p>
+    </div>
+    <ul class="menu">
+      <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#about"><i class="fas fa-user-astronaut"></i> About</a></li>
+      <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+      <li><a href="#training"><i class="fas fa-laptop-code"></i> Training</a></li>
+      <li><a href="#projects"><i class="fas fa-layer-group"></i> Projects</a></li>
+      <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="#contact"><i class="fas fa-paper-plane"></i> Contact</a></li>
+    </ul>
+    <div class="social-sidebar">
+      <a href="https://github.com/parmarbhavdip/local" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/bhavdipsinh-parmar/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:bhavdipsinhparmar245@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </aside>
+ 
+  <!-- Main Content Area with Complete Resume Data -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section id="home">
+      <div class="hero">
+        <div class="hero-badge"><i class="fas fa-laptop-code"></i> Fresher MERN Stack Developer</div>
+        <h1>Building modern <span class="highlight">web experiences</span><br> with React & Node.js</h1>
+        <p>Hi, I'm Bhavdipsinh — passionate frontend & MERN developer. I build responsive, user-friendly web applications and love solving real-world problems with clean code.</p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn-primary">Explore Projects <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn-outline">Hire Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section (direct from resume) -->
+    <section id="about">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>I am a motivated and detail-oriented Fresher MERN Stack Developer, eager to apply my knowledge in HTML, CSS, JavaScript, React.js, and Bootstrap. I am passionate about building efficient and responsive web applications and am consistently learning new technologies. I am a quick learner, hardworking, and thrive in collaborative projects.</p>
+          <p>Currently, I'm enhancing my full-stack skills at The Easy Learn Academy, building real-world mini projects. I'm also exploring AI-powered tools to bring innovation into web interfaces.</p>
+        </div>
+        <ul class="info-list">
+          <li><i class="fas fa-map-marker-alt"></i> Sihor, Bhavnagar - 364240</li>
+          <li><i class="fas fa-graduation-cap"></i> BCA at MKBU University (2023-2026)</li>
+          <li><i class="fas fa-certificate"></i> MERN Stack (Ongoing)</li>
+          <li><i class="fas fa-phone-alt"></i> +91 8849813696</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills Section (exactly from resume) -->
+    <section id="skills">
+      <h2 class="section-title">Tech Arsenal</h2>
+      <div class="skills-wrapper">
+        <span class="skill-card">HTML5</span>
+        <span class="skill-card">CSS3</span>
+        <span class="skill-card">JavaScript (ES6+)</span>
+        <span class="skill-card">React.js</span>
+        <span class="skill-card">Bootstrap</span>
+        <span class="skill-card">Node.js (Basics)</span>
+        <span class="skill-card">MongoDB</span>
+        <span class="skill-card">Git & GitHub</span>
+      </div>
+    </section>
+
+    <!-- INTERNSHIP / TRAINING from resume -->
+    <section id="training">
+      <h2 class="section-title">Internship & Training</h2>
+      <div class="internship-card">
+        <h3>Full Stack Web Development Training</h3>
+        <span class="sub"><i class="fas fa-chalkboard-user"></i> The Easy Learn Academy - Institute, Bhavnagar</span>
+        <ul>
+          <li>Built full-stack web applications</li>
+          <li>Learned frontend and backend integration</li>
+          <li>Worked with real-world mini projects</li>
+        </ul>
+        <p style="margin-top: 12px; font-style: italic;">📌 MERN Stack Development Certificate (Ongoing)</p>
+      </div>
+    </section>
+
+    <!-- Projects Section: includes Student Management System + other original projects -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <!-- Student Management System (resume main project) -->
+        <div class="project-item">
+          <div class="project-img"><i class="fas fa-users" style="font-size: 2.8rem;"></i></div>
+          <div class="project-info">
+            <h3>Student Management System</h3>
+            <p>Developed a student management system using HTML, CSS, JavaScript, and Bootstrap. Created forms for adding, viewing, and managing student data with client-side validation, responsive layout, and user-friendly interface for academic record handling.</p>
+            <div class="project-tags"><span>HTML/CSS</span><span>JavaScript</span><span>Bootstrap</span></div>
+            <a href="https://github.com/parmarbhavdip/local" target="_blank" class="btn-primary" style="padding: 6px 16px; font-size: 0.8rem; margin-top: 12px;">View Code</a>
+          </div>
+        </div>
+        <!-- Tic-Tac-Toe Game -->
+        <div class="project-item">
+          <div class="project-img"><i class="fas fa-gamepad"></i></div>
+          <div class="project-info">
+            <h3>Tic-Tac-Toe Game</h3>
+            <p>Interactive Tic-Tac-Toe game built using HTML, CSS and JavaScript with smart game logic and responsive UI.</p>
+            <div class="project-tags"><span>JS Logic</span><span>CSS Grid</span></div>
+            <a href="https://github.com/parmarbhavdip/local" target="_blank" class="btn-primary" style="padding: 6px 16px; font-size: 0.8rem; margin-top: 12px;">GitHub</a>
+          </div>
+        </div>
+        <!-- Restaurant Website -->
+        <div class="project-item">
+          <div class="project-img"><i class="fas fa-utensils"></i></div>
+          <div class="project-info">
+            <h3>Restaurant Website</h3>
+            <p>Modern responsive restaurant website with attractive UI, menu showcase and smooth navigation.</p>
+            <div class="project-tags"><span>Responsive</span><span>Flexbox</span><span>HTML/CSS</span></div>
+            <a href="https://github.com/parmarbhavdip/local" target="_blank" class="btn-primary" style="padding: 6px 16px; font-size: 0.8rem;">Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certification (based on resume content) -->
+    <section id="education">
+      <h2 class="section-title">Education & Certification</h2>
+      <div class="edu-cert-grid">
+        <div class="edu-card">
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <span class="date"><i class="far fa-calendar-alt"></i> 2023 - 2026</span>
+          <p>MKBU University, Bhavnagar</p>
+          <p style="margin-top: 8px; color: #475569;">Currently pursuing, with focus on full-stack technologies.</p>
+        </div>
+        <div class="cert-card">
+          <h3>MERN Stack Development Certificate</h3>
+          <span class="date"><i class="fas fa-award"></i> Ongoing</span>
+          <p>The Easy Learn Academy - Bhavnagar, Gujarat</p>
+          <p style="margin-top: 8px;">Intensive training covering MongoDB, Express, React, Node.js.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section with real details from resume -->
+    <section id="contact">
+      <h2 class="section-title">Let's Connect</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Collaborate & Create</h3>
+          <p>I'm actively looking for internships / entry-level opportunities in MERN stack development. Feel free to reach out!</p>
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <span>bhavdipsinhparmar245@gmail.com</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <span>+91 8849813696</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fab fa-github"></i>
+            <span>github.com/parmarbhavdip</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-map-pin"></i>
+            <span>Sihor, Bhavnagar - 364240</span>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm" action="#" method="post">
+            <div class="input-group">
+              <input type="text" placeholder="Full name" required>
+            </div>
+            <div class="input-group">
+              <input type="email" placeholder="Email address" required>
+            </div>
+            <div class="input-group">
+              <textarea rows="4" placeholder="Message / Opportunity details..."></textarea>
+            </div>
+            <button type="submit" id="sendBtn">Send message <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Bhavdipsinh Parmar — Fresher MERN Stack Developer | Designed with <i class="fas fa-heart" style="color:#3b82f6;"></i> from resume data.</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+  // contact form alert + reset
+  document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('✨ Thanks for reaching out, Bhavdipsinh will connect with you soon!');
+    this.reset();
+  });
+  // smooth scroll for all internal anchor links (sidebar + buttons)
+  document.querySelectorAll('.menu a, .cta-buttons a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
