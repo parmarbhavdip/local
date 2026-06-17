@@ -11,9 +11,11 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^5.2.1"
+    "argon2": "^0.44.0",
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "nodemailer": "^9.0.1"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/parmarbhavdip/local.git"
