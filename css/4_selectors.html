@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyLearn Academy | MERN Stack Blog</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #542a0c;       /* Dark Brown */
+            --primary-light: #8b5e3c;
+            --accent: #d4a574;        /* Gold/Tan */
+            --bg-light: #fdf8f3;      /* Cream White */
+            --bg-card: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-medium: #555;
+            --text-light: #fff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 30px rgba(84, 42, 12, 0.1);
+            --shadow-lg: 0 20px 40px rgba(84, 42, 12, 0.15);
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            letter-spacing: 0.3px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        code, pre, kbd, samp { 
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; 
+            letter-spacing: normal; 
+            font-size: 0.9em;
+        }
+
+        a { color: inherit; text-decoration: none; transition: var(--transition); }
+        ul { list-style: none; }
+        img, svg { display: block; max-width: 100%; height: auto; }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main#content { flex: 1; padding: 0 2rem 3rem; }
+
+        #site-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #3d1f08 100%);
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-link { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-icon { width: 44px; height: 44px; flex-shrink: 0; }
+        .logo-text { font-family: "Playfair Display", serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.5px; white-space: nowrap; }
+
+        #menu { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+        .menu-item {
+            display: inline-block;
+            padding: 0.6rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            color: var(--text-light);
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+        .menu-item:hover, .menu-item:focus {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+        }
+     
+        #content > header {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+            border-bottom: 1px solid rgba(84, 42, 12, 0.1);
+            margin-bottom: 2rem;
+        }
+        #content > header h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        #content > header p { color: var(--text-medium); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(84, 42, 12, 0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(212, 165, 116, 0.3);
+        }
+
+        .article-card > header {
+            background: linear-gradient(135deg, var(--primary) 0%, #3d1f08 100%);
+            color: var(--text-light);
+            padding: 1.5rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .article-card > header h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .card-body {
+            flex: 1 1 auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto; 
+        }
+        .card-body p { margin-bottom: 1rem; text-align: justify; text-indent: 2rem; color: var(--text-medium); font-size: 0.95rem; }
+        .card-body p:last-child { margin-bottom: 0; }
+        .card-body code { 
+            background: #f5ebe0; 
+            color: var(--primary); 
+            padding: 0.15em 0.4em; 
+            border-radius: 4px; 
+            font-weight: 500; 
+            border: 1px solid rgba(84, 42, 12, 0.1);
+        }
+        .article-card > footer {
+            background: #fafafa;
+            border-top: 1px solid #f0ece3;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .article-card > footer p { 
+            font-size: 0.8rem; 
+            color: var(--text-medium); 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+            font-weight: 500; 
+            margin: 0; 
+        }
+        .article-card > footer em { font-style: normal; color: var(--accent); font-weight: 600; }
+
+       
+        #content > footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(84, 42, 12, 0.1);
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+        #content > footer strong { color: var(--primary); }
+
+       #site-footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: auto; /* Pushes to bottom if content short */
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            text-align: left;
+        }
+        .footer-col h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+            border-bottom: 3px double var(--accent);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        .footer-col h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 1.5px; color: #fff; margin-bottom: 1rem; font-weight: 600; }
+        .footer-col address { font-style: normal; line-height: 1.8; color: #aaa; }
+        .footer-col ul li { margin-bottom: 0.75rem; }
+        .footer-col a { color: #aaa; position: relative; padding-left: 0; }
+        .footer-col a::before { content: "→ "; display: inline-block; width: 0; overflow: hidden; transition: var(--transition); color: var(--accent); }
+        .footer-col a:hover { color: var(--accent); padding-left: 10px; }
+        .footer-col a:hover::before { width: auto; }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2.5rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            #site-header { padding: 1rem; justify-content: center; text-align: center; }
+            #menu { justify-content: center; width: 100%; }
+            .menu-item { padding: 0.5rem 1rem; font-size: 0.75rem; }
+            main#content { padding: 0 1rem 2rem; }
+            .articles-grid { grid-template-columns: 1fr; }
+            .card-body p { text-indent: 1.5rem; }
+            .footer-grid { text-align: center; }
+            .footer-col h2 { border-bottom: none; border-left: 3px double var(--accent); padding-left: 1rem; padding-bottom: 0; }
+            .footer-col a:hover { padding-left: 0; text-decoration: underline; }
+            .footer-col a::before { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+      
+        <header id="site-header">
+            <a href="#" class="logo-link" aria-label="EasyLearn Academy Home">
+                <!-- Inline SVG Logo - Replaces images/icon.png -->
+                <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="48" height="48" rx="12" fill="#D4A574"/>
+                    <path d="M24 12L36 24L24 36L12 24L24 12Z" fill="#542A0C"/>
+                    <circle cx="24" cy="24" r="6" fill="#D4A574"/>
+                </svg>
+                <span class="logo-text">EasyLearn</span>
+            </a>
+
+            <nav id="menu" aria-label="Main Navigation">
+                <a class="menu-item" href="#">Home</a>
+                <a class="menu-item" href="#">About Us</a>
+                <a class="menu-item" href="#">Products</a>
+                <a class="menu-item" href="#">Services</a>
+                <a class="menu-item" href="#">Contact Us</a>
+            </nav>
+        </header>
+
+
+        <main id="content">
+            <header>
+                <h1>About the EasyLearn Academy</h1>
+                <p>Master the MERN Stack with our curated guides, tutorials, and deployment strategies.</p>
+            </header>
+
+            <div class="articles-grid">
+
+                <article class="article-card">
+                    <header>
+                        <h2>What is the MERN Stack and Why You Should Learn It</h2>
+                    </header>
+                    <div class="card-body">
+                        <p>The MERN Stack—<strong>MongoDB, Express.js, React.js, and Node.js</strong>—is a popular full-stack development technology that uses JavaScript for both client and server-side programming. This uniformity allows developers to switch seamlessly between front-end and back-end code.</p>
+                        <p>MongoDB is a NoSQL database that stores data in JSON-like format. Express.js is a minimal Node.js web application framework that simplifies routing and middleware handling. React.js is a front-end library developed by Facebook for building interactive UIs. Node.js allows JavaScript to run on the server, enabling full-stack development with a single language.</p>
+                        <p>Learning the MERN stack equips developers with the tools to build modern, high-performance web applications. Startups and tech companies favor it for its speed and scalability. Since all parts of the stack use JavaScript, it reduces context switching and makes the development process more efficient.</p>
+                    </div>
+                    <footer>
+                        <p><em>Written by WebDev Insights</em> • June 2025</p>
+                    </footer>
+                </article>
+
+                <article class="article-card">
+                    <header>
+                        <h2>Step-by-Step Guide to Setting Up a MERN Stack Project</h2>
+                    </header>
+                    <div class="card-body">
+                        <p>Starting a MERN stack project for the first time can feel complex, but breaking it into steps simplifies the process. First, ensure you have <code>Node.js</code> and <code>MongoDB</code> installed on your machine. Create a new project folder and initialize it using <code>npm init</code>. Then install Express.js and other back-end dependencies like <code>Mongoose</code> to connect with MongoDB.</p>
+                        <p>Next, set up the front-end using <code>Create React App</code> or <code>Vite</code>. Keep your front-end in a separate folder like <code>/client</code>. React handles UI components and interactions. Connect the front-end with the back-end using <code>Axios</code> or <code>Fetch API</code> to make HTTP requests. You'll likely create routes like <code>/api/users</code> for user data. Don't forget to use environment variables for secure data handling.</p>
+                    </div>
+                    <footer>
+                        <p><em>Written by StackStarter Blog</em> • June 2025</p>
+                    </footer>
+                </article>
+
+                <article class="article-card">
+                    <header>
+                        <h2>How to Build a REST API with Express and MongoDB</h2>
+                    </header>
+                    <div class="card-body">
+                        <p>REST APIs are the backbone of full-stack applications, enabling communication between client and server. In the MERN stack, you use Express.js to define routes and MongoDB to store data. To begin, define a Mongoose schema to structure your data—for example, a <code>User</code> model with fields like name, email, and password.</p>
+                        <p>Next, create routes in Express to perform CRUD operations (Create, Read, Update, Delete). Here's an example route: <code>app.get('/api/users', async (req, res) => { ... })</code> which retrieves all users. Use <code>async/await</code> with <code>try/catch</code> blocks to handle operations and errors gracefully. Always validate incoming data to prevent bad requests.</p>
+                    </div>
+                    <footer>
+                        <p><em>Written by CodeStream Weekly</em> • June 2025</p>
+                    </footer>
+                </article>
+
+                <article class="article-card">
+                    <header>
+                        <h2>Connecting React Front-End with Express Back-End</h2>
+                    </header>
+                    <div class="card-body">
+                        <p>One of the key challenges in MERN development is integrating the React front-end with the Express.js back-end. The React app sends requests to the back-end server to fetch or submit data. To avoid CORS (Cross-Origin Resource Sharing) issues, you must configure the Express server to accept requests from the React domain using the <code>cors</code> middleware.</p>
+                        <p>In the React app, use <code>Axios</code> or <code>Fetch API</code> to make HTTP requests to back-end endpoints. For example, to fetch user data, call <code>axios.get('/api/users')</code>. Use <code>useEffect</code> to trigger this call when the component mounts. Store the response in React state using <code>useState</code> and render it on the UI. Always show loading indicators and handle errors gracefully.</p>
+                    </div>
+                    <footer>
+                        <p><em>Written by ReactNode Journal</em> • June 2025</p>
+                    </footer>
+                </article>
+
+                
+                <article class="article-card">
+                    <header>
+                        <h2>How to Deploy a MERN Stack App on Render and Vercel</h2>
+                    </header>
+                    <div class="card-body">
+                        <p>Deployment is a critical step in bringing your MERN stack app to real users. You can deploy the front-end (React) using <strong>Vercel</strong> or <strong>Netlify</strong>, and the back-end (Node/Express) using <strong>Render</strong> or <strong>Railway</strong>. Begin by creating separate folders for the client and server. Push your entire codebase to GitHub.</p>
+                        <p>Then, connect your GitHub repo to Vercel for the front-end. Choose the <code>client</code> folder as the root directory and set up build commands like <code>npm run build</code>. For the server, use Render. Create a new web service and link it to the server folder. Set up environment variables such as MongoDB connection strings securely. Render will detect your Node environment and handle dependencies automatically.</p>
+                    </div>
+                    <footer>
+                        <p><em>Written by DeployMaster Tips</em> • June 2025</p>
+                    </footer>
+                </article>
+
+            </div> 
+
+            <footer>
+                <p>Compiled by: <strong>Ankit Patel</strong> | EasyLearn Academy</p>
+            </footer>
+        </main>
+
+        <footer id="site-footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Address</h2>
+                    <h3>The EasyLearn Academy</h3>
+                    <address>
+                        105, Eva Surbhi, Opp Aksharwadi Temple<br>
+                        Waghawadi Road,<br>
+                        Bhavnagar - 364001, Gujarat
+                    </address>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Resources</h2>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EasyLearn Academy. All rights reserved. Designed with <span style="color:#e74c3c;"></span> for developers.</p>
+            </div>
+        </footer>
+
+    </div> 
+</body>
+</html>

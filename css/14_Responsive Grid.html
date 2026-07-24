@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Grid</title>
+
+<style>
+/* Mobile (default) */
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+
+/* FIX: round + equal size */
+.container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: auto; /* center image */
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* iPad */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <img src="images/1.jpeg">
+    <img src="images/2.jpeg">
+    <img src="images/3.jpeg">
+    <img src="images/4.jpeg">
+    <img src="images/5.jpeg">
+    <img src="images/6.jpeg">
+    <img src="images/7.jpeg">
+    <img src="images/8.jpeg">
+    <img src="images/9.jpeg">
+</div>
+
+</body>
+</html>

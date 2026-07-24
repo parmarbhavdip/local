@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+</head>
+
+<body>
+
+    <div class="calculator">
+        <h2>Simple Calculator</h2>
+
+        <form action="" method="get" onsubmit="return doCalculation(event);">
+            <table border="2" cellpadding="10" align="center" width="50%">
+                <tr>
+                    <td><label for="num1">First Number:</label></td>
+                    <td><input type="number" id="num1" name="num1" required></td>
+                </tr>
+                <tr>
+                    <td><label for="num2">Second Number:</label></td>
+                    <td><input type="number" id="num2" name="num2" required></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit" name="operation" value="add" id="add">Addition (+)</button>
+                        <button type="submit" name="operation" value="subtract" id="subtract">Subtraction (-)</button>
+                        <button type="submit" name="operation" value="multiply" id="multiply">Multiplication
+                            (*)</button>
+                        <button type="submit" name="operation" value="divide" id="divide">Division (÷)</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <h2 id="output"></h2>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function doCalculation(event) {
+            //alert("function called.");
+            //console.log(event);
+            let form = event.target; //return form which has generated event
+            let operation = form.querySelector('button[type="submit"]:focus').value;
+            console.log(operation);
+            let result = null;
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+
+            if (operation === "add") {
+                result = num1 + num2;
+            }
+            else if (operation === 'subtract') {
+                result = num1 - num2;
+            }
+            else if (operation === 'multiply') {
+                result = num1 * num2;
+            }
+            else if (operation === 'divide') {
+                result = num1 / num2;
+            }
+            document.getElementById('output').innerHTML = result;
+            return false; //required
+        }
+    </script>
+</body>
+
+</html>

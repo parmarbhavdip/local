@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIP Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>SIP Calculator</h2>
+
+    <form id="sipForm">
+        <label>Monthly Investment (₹)</label>
+        <input type="number" id="amount" required>
+
+        <label>Expected Annual Return (%)</label>
+        <input type="number" id="rate" required>
+
+        <label>Investment Duration (Years)</label>
+        <input type="number" id="years" required>
+
+        <button type="submit">Calculate SIP</button>
+    </form>
+
+    <div class="result">
+        <p id="invested"></p>
+        <p id="returns"></p>
+        <p id="maturity"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

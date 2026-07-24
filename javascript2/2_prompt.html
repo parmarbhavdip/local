@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>prompt in javascript</h1>
+    <hr/>
+    <script>
+        //create variables 
+        var message = "enter your name";
+        var defaultValue = "ankit";
+        var response = prompt(message, defaultValue);
+        alert("Hello Mr/miss/mrs " + response);
+
+        var num1 = prompt("enter first number",1);
+        var num2 = prompt("enter second number",2);
+
+        //before we do any mathematical operations we have to convert numbers into integer 
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        
+        var addition = num1 + num2;
+        document.write("addition =",addition);
+    </script>
+</body>
+
+</html>

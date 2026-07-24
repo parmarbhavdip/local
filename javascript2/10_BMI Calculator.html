@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+
+<div class="calculator">
+    <h2>BMI Calculator</h2>
+
+    <form onsubmit="return calculateBMI(event);">
+        <table border="2" cellpadding="10" align="center" width="50%">
+
+            <tr>
+                <td>Height (Feet):</td>
+                <td><input type="number" id="feet" required></td>
+            </tr>
+
+            <tr>
+                <td>Height (Inches):</td>
+                <td><input type="number" id="inches" required></td>
+            </tr>
+
+            <tr>
+                <td>Weight (KG):</td>
+                <td><input type="number" id="weight" required></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Calculate BMI</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <h2 id="output"></h2>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+
+<script>
+function calculateBMI(event) {
+
+    let feet = parseFloat(document.getElementById("feet").value);
+    let inches = parseFloat(document.getElementById("inches").value);
+    let weight = parseFloat(document.getElementById("weight").value);
+
+    // convert height to meters
+    let totalInches = (feet * 12) + inches;
+    let meters = totalInches * 0.0254;
+
+    // BMI formula
+    let bmi = weight / (meters * meters);
+
+    let status = "";
+
+    if (bmi < 18.5) {
+        status = "Underweight";
+    } 
+    else if (bmi < 25) {
+        status = "Normal";
+    } 
+    else if (bmi < 30) {
+        status = "Overweight";
+    } 
+    else {
+        status = "Obese";
+    }
+
+    document.getElementById("output").innerHTML = 
+        "BMI = " + bmi.toFixed(2) + " (" + status + ")";
+
+    return false; 
+}
+</script>
+
+</body>
+</html>

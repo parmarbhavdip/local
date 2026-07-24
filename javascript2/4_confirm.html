@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function confirmSubscription() {
+            console.log('function called...');
+            var response = confirm("are you sure you want to activate subscription?");
+            if (response == true) {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>confirm </h1>
+    <p align="right">
+        <a onclick="return confirmSubscription();" href="subscription.html">Subscribe for our Pro Pack (charges 3600 per
+            year)</a>
+    </p>
+</body>
+</html>

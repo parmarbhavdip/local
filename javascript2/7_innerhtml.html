@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>innerhtml example</h1>
+    <table width="80%" align="center" border="1">
+        <tr>
+            <td align="center"><button type="button" onclick="showHanumanChalisa();">show Hanuman chalisa</button></td>
+            <td align="center"><button type="button" onclick="displayDateTime();">show current date & time</button></td>
+            <td align="center"><button type="button" onclick="displayAll();">show both button value</button></td>
+        </tr>
+        <tr>
+            <td width="33.33%" id="one"></td>
+            <td width="33.33%" id="two"></td>
+            <td width="33.33%" id="three"></td>
+        </tr>
+
+    </table>
+
+    <script>
+        //user defined function 
+        //arrow function
+        let displayAll = () => {
+            let first = document.getElementById('one').innerHTML;
+            let second = document.getElementById('two').innerHTML;
+            let output = second + "<br/>" + first;
+            document.getElementById('three').innerHTML = output;
+        }
+
+        let displayDateTime = function(){
+            //variables declared using let is called local variable
+            let now = new Date();
+            let today = now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear();
+            let time = now.getHours() + ":" + now.getMinutes() + "AM/PM";
+            document.getElementById('two').innerHTML = today + " " +  time;
+        }
+        function showHanumanChalisa() {
+            let chalisa = `Shri Guru Charan Saroj Raj
+Nija Manu Mukura Sudhari
+Baranau Raghuvar Bimal Jasu
+Jo Dayaku Phala Chari
+Budhiheen Tanu Janike
+Sumiro Pavan Kumara
+Bal Buddhi Vidya Dehu Mohe
+Harahu Kalesh Vikar
+Jai Hanuman Gyan Gun Sagar
+Jai Kapis Tihun Lok Ujagar
+Ram Doot Atulit Bal Dhama
+Anjani Putra Pavan Sut Nama
+Mahabir Vikram Bajrangi
+Kumati Nivar Sumati Ke Sangi
+Kanchan Varan Viraj Subesa
+Kanan Kundal Kunchit Kesa
+Hath Vajra Aur Dhwaja Viraje
+Kandhe Moonj Janeu Sajai
+Shankar Suvan Kesari Nandan
+Tej Pratap Maha Jag Vandan
+Vidyavan Guni Ati Chatur
+Ram Kaj Karibe Ko Aatur
+Prabhu Charitra Sunibe Ko Rasiya
+Ram Lakhan Sita Man Basiya
+Sukshma Roop Dhari Siyahi Dikhava
+Vikat Roop Dhari Lanka Jarava
+Bhim Roop Dhari Asur Sanhare
+Ramchandra Ke Kaj Sanvare
+Laye Sanjivan Lakhan Jiyaye
+Shri Raghuvir Harashi Ur Laye
+Raghupati Kinhi Bahut Badai
+Tum Mama Priya Bharat Hi Sam Bhai
+Sahas Badan Tumharo Yash Gawai
+As Kahi Shripati Kanth Lagawai
+Sankadik Brahmadi Munisa
+Narad Sharad Sahit Aheesa
+Yam Kuber Digpal Jahan Te
+Kavi Kobid Kahi Sake Kahan Te
+Tum Upkar Sugreevahin Kinha
+Ram Milaye Rajpad Dinha
+Tumharo Mantra Vibheeshan Mana
+Lankeshwar Bhaye Sab Jag Jana
+Yug Sahasra Yojan Par Bhanu
+Leelyo Tahi Madhur Phal Janu
+Prabhu Mudrika Meli Mukh Mahee
+Jaladhi Langhi Gaye Acharaj Nahee
+Durgam Kaj Jagat Ke Jete
+Sugam Anugraha Tumhre Tete
+Ram Duware Tum Rakhvare
+Hot Na Agya Binu Paisare
+Sab Sukh Lahai Tumhari Sarna
+Tum Rakshak Kahu Ko Darna
+Aapan Tej Tumharo Aapai
+Teenon Lok Hank Ten Kanpai
+Bhoot Pishaach Nikat Nahin Aavai
+Mahabir Jab Naam Sunavai
+Nasai Rog Harai Sab Peera
+Japat Nirantar Hanumat Beera
+Sankat Ten Hanuman Chhudavai
+Man Kram Vachan Dhyan Jo Lavai
+Sab Par Ram Tapasvi Raja
+Tin Ke Kaj Sakal Tum Saja
+Aur Manorath Jo Koi Lavai
+Soi Amit Jeevan Phal Pavai
+Charon Yug Paratap Tumhara
+Hai Parsiddh Jagat Ujiyara
+Sadhu Sant Ke Tum Rakhvare
+Asur Nikandan Ram Dulare
+Ashta Siddhi Nau Nidhi Ke Data
+As Var Deen Janaki Mata
+Ram Rasayan Tumhare Pasa
+Sada Raho Raghupati Ke Dasa
+Tumhare Bhajan Ram Ko Pavai
+Janam Janam Ke Dukh Bisravai
+Antkaal Raghuvar Pur Jayee
+Jahan Janam Hari Bhakt Kahayee
+Aur Devta Chitt Na Dharai
+Hanumat Sei Sarva Sukh Karai
+Sankat Kate Mite Sab Peera
+Jo Sumirai Hanumat Balbeera
+Jai Jai Jai Hanuman Gosai
+Kripa Karahu Gurudev Ki Nai
+Jo Shat Bar Path Kar Koi
+Chhutahi Bandi Maha Sukh Hoi
+Jo Yeh Padhe Hanuman Chalisa
+Hoye Siddhi Sakhi Gaureesa
+Tulsidas Sada Hari Chera
+Keejai Nath Hriday Mah Dera
+Pavan Tanay Sankat Harana`
+            document.getElementById('one').innerHTML = chalisa;
+        }
+    </script>
+</body>
+
+</html>
+
+

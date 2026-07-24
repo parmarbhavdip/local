@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+</head>
+
+<body>
+
+<div class="calculator">
+    <h2>Simple Interest Calculator</h2>
+
+    <form onsubmit="return calculateSI(event);">
+        <table border="2" cellpadding="10" align="center" width="50%">
+
+            <tr>
+                <td>Amount (Principal):</td>
+                <td><input type="number" id="amount" required></td>
+            </tr>
+
+            <tr>
+                <td>Rate (%):</td>
+                <td><input type="number" id="rate" required></td>
+            </tr>
+
+            <tr>
+                <td>Time (Years):</td>
+                <td><input type="number" id="time" required></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit" value="si">Calculate SI</button>
+                    <button type="submit" value="total">Total Amount</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <h2 id="output"></h2>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+
+<script>
+function calculateSI(event) {
+
+    let form = event.target;
+
+    let operation = form.querySelector('button[type="submit"]:focus').value;
+
+    let p = parseFloat(document.getElementById("amount").value);
+    let r = parseFloat(document.getElementById("rate").value);
+    let t = parseFloat(document.getElementById("time").value);
+
+    let si = (p * r * t) / 100;
+    let result;
+
+    if (operation === "si") {
+        result = "Simple Interest = " + si;
+    } 
+    else if (operation === "total") {
+        result = "Total Amount = " + (p + si);
+    }
+
+    document.getElementById("output").innerHTML = result;
+
+    return false; 
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.header-left img {
+  width: 80px;
+}
+
+.header-right {
+  display: flex;
+}
+
+.header-right nav a {
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  color: rgb(24, 1, 1);
+}
+
+.container {
+  max-width: 80%;
+  margin: 50px auto;
+  display: block;
+}
+
+.container .content-left {
+  text-align: center;
+}
+
+.content-left h1 {
+  font-size: 60px;
+  letter-spacing: 2px;
+}
+
+.green {
+  color: green;
+  font-family: 'Viga', serif;
+}
+
+.content-left p {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.learn-more-btn {
+  display: inline-block;
+  background: green;
+  padding: 12px 18px;
+  text-decoration: none;
+  border-radius: 25px;
+  color: white;
+  margin-top: 15px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.content-right {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.content-right img.starbucks {
+  max-width: 50%;
+}
+
+.social-icons {
+  position: absolute;
+  display: grid;
+  right: 0;
+  bottom: 0;
+}
+
+.social-icons img {
+  width: 25px;
+  margin: 10px;
+}
+
+.social-icons .facebook {
+  width: 18.5px;
+}
+
+.thumb {
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
+}
+
+.thumb img {
+  width: 54px;
+  margin: 20px;
+  transition: transform 0.2s ease;
+}
+
+.thumb a:hover img {
+  transform: translateY(-15px);
+}
+
+@media (min-width: 1140px) {
+  .container {
+    max-width: 90%;
+    display: flex;
+  }
+
+  .content-left {
+    text-align: left;
+    flex: 1;
+  }
+
+  .content-right {
+    flex: 1;
+  }
+
+  .content-right img.starbucks {
+    width: 330px;
+    margin-left: 150px;
+    margin-top: -30px;
+  }
+
+  .social-icons {
+    bottom: 40%;
+    right: 1%;
+  }
+
+  .thumb {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  header {
+    flex-direction: column;
+  }
+
+  .header-left img {
+    margin: auto;
+    display: block;
+  }
+
+  .header-right {
+    justify-content: center;
+    margin-top: 35px;
+  }
+
+  .content-left h1 {
+    font-size: 50px;
+  }
+
+  .content-left p {
+    font-size: 18px;
+  }
+
+  .learn-more-btn {
+    font-size: 16.2px;
+  }
+}
+
+@media only screen and (max-width: 404px) {
+  .content-right img.starbucks {
+    max-width: 50%;
+    margin-top: -30px;
+  }
+
+  .social-icons {
+    display: none;
+  }
+
+  .thumb {
+    margin-top: -30px;
+  }
+
+  .thumb img {
+    width: 45px;
+  }
+}
+
+
